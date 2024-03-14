@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "bulgakov-analyz",
+    "description": "Расширение для анализа отчетов в формате .docx в системе Bulgakov",
+    "version": "1.0",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "img/128.png"
+    },
+    "host_permissions": [
+      "https://ithub.bulgakov.app/lessons/*"
+    ],
+    "permissions": [
+      "tabs", "webNavigation", "scripting", "activeTab"
+    ],
+    "icons": {
+      "16": "img/16.png",
+      "32": "img/32.png",
+      "48": "img/48.png",
+      "128": "img/128.png"
+    },
+    "background": {
+      "service_worker": "scripts/background.js"
+    },
+    "web_accessible_resources": [
+        {
+          "resources": ["scripts/check-similarity.js"],
+          "matches": [
+            "<all_urls>"
+          ]
+        }
+      ]
+    
+  }
